@@ -76,6 +76,10 @@ h2 {
 /* ////////////////////////// */
 /* right section */
 
+.right-container {
+  padding-left: 5rem !important;
+}
+
 .form {
   z-index: 10;
   padding: 1rem;
@@ -162,6 +166,9 @@ h2 {
   .container {
     margin-top: 1.6rem;
     margin-bottom: 1.6rem;
+  }
+  .right-container {
+    padding-left: 1.5rem !important;
   }
   .left-content {
     margin-top: 16px;
