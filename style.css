@@ -28,23 +28,30 @@ body {
   z-index: 1;
 }
 
+.bg-wave {
+  overflow: hidden;
+  height: 300px;
+  position: fixed;
+  bottom: 0;
+  z-index: -1110;
+}
+
 h1,
 h2 {
   text-align: left;
   font-weight: 800;
-
   letter-spacing: 0.75px;
 }
 
 h1 {
-  margin-top: 3.2rem;
+  margin-top: 2.4rem;
   font-size: 3.2rem;
   color: #fff;
 }
 
 h2 {
   margin: 40px 0 20px;
-  font-size: 1.8rem;
+  font-size: 2.4rem;
   color: #212121;
 }
 
@@ -54,23 +61,51 @@ h2 {
   z-index: 0;
 }
 
+.left-content {
+  margin-top: 32px;
+}
+
 .illustration {
   position: absolute;
   bottom: 12%;
   left: 20%;
   transform: scale(1.25);
 }
+
+.illustration_box {
+  position: absolute;
+  bottom: 25%;
+  right: 10%;
+  transform: scale(1.25), translateY(0);
+  animation: float 3s infinite forwards;
+  transition: all ease-in-out;
+}
+
 /* ////////////////////////// */
-/* form section */
+/* right section */
+
 .form {
   z-index: 10;
   padding: 1rem;
+  position: relative;
+}
+
+.illustration_plane {
+  z-index: 1;
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 8.8rem;
+  transform: translateY(0);
+  animation: float 4s 1s infinite forwards;
+  transition: all ease-in-out;
 }
 
 .form-control {
   position: relative;
   border: none;
   padding: 8px;
+  background-color: transparent !important;
 }
 
 .form-control label {
@@ -126,9 +161,17 @@ h2 {
   width: 100%;
 }
 
+.form button:first-of-type:hover {
+  background-color: #ff7a00;
+  border: 1px solid rgb(216, 105, 1);
+}
+
 @media only screen and (max-width: 576px) {
   .container {
     margin-top: 1.6rem;
+  }
+  .left-content {
+    margin-top: 16px;
   }
   h1 {
     margin-top: 2.4rem;
@@ -145,5 +188,24 @@ h2 {
   }
   .illustration {
     display: none;
+  }
+  .illustration_plane {
+    display: none;
+  }
+  .illustration_box {
+    display: none;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(6px);
+  }
+  100% {
+    transform: translateY(0);
   }
 }
